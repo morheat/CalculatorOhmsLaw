@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electrical Calculators</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow+Condensed:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <h1>Electrical Calculators</h1>
+  <p>Enter any two values &mdash; the remaining fields calculate automatically</p>
+</header>
+
+<div class="calculators">
+
+  <!-- SINGLE PHASE -->
+  <div class="calc-card" id="card1">
+    <div class="card-header">
+      <h2>Single Phase</h2>
+      <div class="subtitle">Ohm's Law &mdash; 1Ø</div>
+    </div>
+    <div class="fields">
+      <div class="field-row">
+        <div class="field-symbol">V</div>
+        <div class="input-wrap">
+          <input type="number" id="s_v" placeholder="Volts" min="0" step="any">
+          <span class="unit-tag">V</span>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field-symbol">I</div>
+        <div class="input-wrap">
+          <input type="number" id="s_i" placeholder="Amps" min="0" step="any">
+          <span class="unit-tag">A</span>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="field-row">
+        <div class="field-symbol">R</div>
+        <div class="input-wrap">
+          <input type="number" id="s_r" placeholder="Ohms" min="0" step="any">
+          <span class="unit-tag">Ω</span>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field-symbol">W</div>
+        <div class="input-wrap">
+          <input type="number" id="s_w" placeholder="Watts" min="0" step="any">
+          <span class="unit-tag">W</span>
+        </div>
+      </div>
+    </div>
+    <div class="error-msg" id="s_err"></div>
+    <div class="btn-row">
+      <button class="btn" onclick="clearCalc('s')">Clear</button>
+    </div>
+    <div class="formula-strip">
+      V = I × R <span>|</span> I = V ÷ R <span>|</span> R = V ÷ I <span>|</span> W = V × I
+    </div>
+  </div>
+
+  <!-- 3-PHASE OPEN WYE -->
+  <div class="calc-card" id="card3">
+    <div class="card-header">
+      <h2>3-Phase Open Wye</h2>
+      <div class="subtitle">No Neutral &mdash; 3Ø &mdash; √3 = 1.7321</div>
+    </div>
+    <div class="fields">
+      <div class="field-row">
+        <div class="field-symbol">V</div>
+        <div class="input-wrap">
+          <input type="number" id="t_v" placeholder="Volts (L-L)" min="0" step="any">
+          <span class="unit-tag">V</span>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field-symbol">I</div>
+        <div class="input-wrap">
+          <input type="number" id="t_i" placeholder="Amps" min="0" step="any">
+          <span class="unit-tag">A</span>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="field-row">
+        <div class="field-symbol">R</div>
+        <div class="input-wrap">
+          <input type="number" id="t_r" placeholder="Ohms / Phase" min="0" step="any">
+          <span class="unit-tag">Ω</span>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field-symbol">W</div>
+        <div class="input-wrap">
+          <input type="number" id="t_w" placeholder="Watts (Total)" min="0" step="any">
+          <span class="unit-tag">W</span>
+        </div>
+      </div>
+    </div>
+    <div class="error-msg" id="t_err"></div>
+    <div class="btn-row">
+      <button class="btn" onclick="clearCalc('t')">Clear</button>
+    </div>
+    <div class="formula-strip">
+      W = √3 × V × I <span>|</span> V = W ÷ (√3 × I) <span>|</span> I = W ÷ (√3 × V) <span>|</span> R = V ÷ (√3 × I)
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
