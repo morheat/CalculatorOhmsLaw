@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Electrical Calculators</title>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow+Condensed:wght@400;600;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electrical Calculators</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow+Condensed:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
   <h1>Electrical Calculators</h1>
   <p>Enter any two values &mdash; the remaining fields calculate automatically</p>
+  <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">☀ Light Mode</button>
 </header>
 
 <div class="calculators">
@@ -57,29 +58,26 @@
     <div class="btn-row">
       <button class="btn" onclick="clearCalc('s')">Clear</button>
     </div>
-    <div class="formula-strip">
-      V = I × R <span>|</span> I = V ÷ R <span>|</span> R = V ÷ I <span>|</span> W = V × I
-    </div>
   </div>
 
-  <!-- 3-PHASE OPEN WYE -->
+  <!-- 3-PHASE OPEN WYE (NO NEUTRAL) -->
   <div class="calc-card" id="card3">
     <div class="card-header">
       <h2>3-Phase Open Wye</h2>
-      <div class="subtitle">No Neutral &mdash; 3Ø &mdash; √3 = 1.7321</div>
+      <div class="subtitle">No Neutral &mdash; 3Ø &mdash; &radic;3 = 1.7321</div>
     </div>
     <div class="fields">
       <div class="field-row">
         <div class="field-symbol">V</div>
         <div class="input-wrap">
-          <input type="number" id="t_v" placeholder="Volts (L-L)" min="0" step="any">
+          <input type="number" id="t_v" placeholder="Phase Voltage (Vph)" min="0" step="any">
           <span class="unit-tag">V</span>
         </div>
       </div>
       <div class="field-row">
         <div class="field-symbol">I</div>
         <div class="input-wrap">
-          <input type="number" id="t_i" placeholder="Amps" min="0" step="any">
+          <input type="number" id="t_i" placeholder="Line Current (Ilo)" min="0" step="any">
           <span class="unit-tag">A</span>
         </div>
       </div>
@@ -102,9 +100,6 @@
     <div class="error-msg" id="t_err"></div>
     <div class="btn-row">
       <button class="btn" onclick="clearCalc('t')">Clear</button>
-    </div>
-    <div class="formula-strip">
-      W = √3 × V × I <span>|</span> V = W ÷ (√3 × I) <span>|</span> I = W ÷ (√3 × V) <span>|</span> R = V ÷ (√3 × I)
     </div>
   </div>
 
